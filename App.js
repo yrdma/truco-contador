@@ -6,16 +6,16 @@ import { Image } from 'react-native'
 export default function App() {
 
 const[contador,setContador] = useState(0);
-
+const[contador2,setContador2] = useState(0);
   return (
     <View style={styles.container}>
       <Image/>
-      <Text style={{fontSize: 40}}>Marcador</Text>
-      
 
-      <Text>{contador}</Text>
-
-   <View style={styles.buttons}>
+   <View style ={styles.contadorNos}>
+    <Text style={{fontSize: 30,justifyContent:'flex-start'}}>Nós</Text>
+    <Text style={{fontSize: 30, marginTop: 30}}>{contador}</Text> 
+   
+  <View style={styles.buttons}>
     <View style ={styles.aumento}>
       <Button  
       color= "#07a32e"
@@ -30,9 +30,36 @@ const[contador,setContador] = useState(0);
         title='-'
          onPress={() => contador > 0 && setContador(contador - 1)}
          />
+         </View>
+    </View>
+    </View>
+
+    <View style ={styles.contadorEles}>
+    <Text style={{fontSize: 30, justifyContent: 'flex-end'}}>Eles</Text>
+    <Text style={{fontSize: 30, marginTop: 30}}>{contador2}</Text>
+    <View style={styles.buttons}>
+      <View style ={styles.aumento}>
+     <Button  
+      color= "#07a32e"
+      title='+' 
+      onPress={() => setContador2 (contador2 + 1)}
+      />
+      </View>
+
+      
+      <View style ={styles.diminuir}>
+      <Button
+        
+        color= "#ff0000"
+        title='-'
+         onPress={() => contador2 > 0 && setContador2(contador2 - 1)}
+         />
+         </View>
+      </View>
   </View>
-   </View>
-      <StatusBar style="auto" />
+
+   
+     
     </View>
   );
 }
@@ -42,15 +69,32 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
+    flexDirection: 'row',  
     justifyContent: 'center',
-  },buttons:{
+    gap: 30,
+  },
+  buttons:{
     flexDirection:'row' ,  
-    margin: 10,
-    gap: 10
-  },aumento:{
-    width: 75
-  },diminuir:{
-    width: 75
+    margin: 20,
+    gap: 10,
+  }
+  ,aumento:{
+    width: 50 ,
+    marginTop: 30
+   
+  },
+  diminuir:{
+    width: 50 ,
+    marginTop: 30 
+  },
+  contadorNos:{
+    alignItems: 'center',
+    marginTop: 30
+
+  },
+  contadorEles:{
+    alignItems: 'center',
+    marginTop: 30
   }
 });
 
