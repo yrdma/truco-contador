@@ -31,8 +31,36 @@ const[contador2,setContador2] = useState(0);
          onPress={() => contador > 0 && setContador(contador - 1)}
          />
          </View>
+     
     </View>
+         <View style ={styles.truco}>
+      <Button  
+      color= " #00595E"
+      title='TRUCO' 
+      onPress={() => setContador (contador + 3)}
+      />
+
+      <Button  
+      color= "#00225D"
+      title='SEISS' 
+      onPress={() => setContador (contador + 6)}
+      /> 
+
+      <Button  
+      color= "#58005E"
+      title='NOVEEE' 
+      onPress={() => setContador (contador + 9)}
+      />
+
+      <Button  
+      color= "#5D0000"
+      title='DOZI' 
+      onPress={() => setContador (contador + 12)}
+      />
+
+      </View>
     </View>
+    
 
     <View style ={styles.contadorEles}>
     <Text style={{fontSize: 30, justifyContent: 'flex-end'}}>Eles</Text>
@@ -56,11 +84,38 @@ const[contador2,setContador2] = useState(0);
          />
          </View>
       </View>
+     <View style ={styles.truco}>
+      <Button  
+      color= "#00595E"
+      title='TRUCO' 
+      onPress={() => setContador2 (contador2 + 3)}
+      />
+
+      <Button  
+      color= "#00225D"
+      title='SEISSS' 
+      onPress={() => setContador2 (contador2 + 6)}
+      /> 
+
+      <Button  
+      color= "#58005E"
+      title='NOVEEE' 
+      onPress={() => setContador2 (contador2 + 9)}
+      />
+
+      <Button  
+      color= "#5D0000"
+      title='DOZI' 
+      onPress={() => setContador2 (contador2 + 12)}
+      />
+
+      </View>
   </View>
 
    
      
     </View>
+    
   );
 }
 
@@ -95,6 +150,10 @@ const styles = StyleSheet.create({
   contadorEles:{
     alignItems: 'center',
     marginTop: 30
+  },
+  truco:{
+   gap: 10,
+   
   }
 });
 
