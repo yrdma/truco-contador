@@ -65,6 +65,16 @@ export default function App() {
       }
     }
   }
+   function reiniciarPartida() {
+    setContador(0);
+    setContador2(0);
+  }
+
+  function novoJogo() {
+    reiniciarPartida();
+    setGanhou(0);
+    setGanhou2(0);
+  }
 
   return (
     <View style={styles.container}>
@@ -165,6 +175,16 @@ export default function App() {
         </View>
       </View>
     </View>
+         <View style={styles.parte5}>
+      <Button
+        color="#5D0000"
+        title="REINICIAR"
+        onPress={() => reiniciarPartida()}
+      />
+      <Button color="#5D0000" 
+      title="NOVO JOGO" 
+      onPress={() => novoJogo()} />
+      </View>
     </View>
   );
 }
@@ -210,4 +230,10 @@ flexDirection: "row",
   truco: {
     gap: 10,
   },
+   parte5:{
+    marginBottom: 100,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+  }
 });
